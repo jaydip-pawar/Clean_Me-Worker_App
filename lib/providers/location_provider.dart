@@ -38,6 +38,14 @@ class LocationProvider with ChangeNotifier {
       }
     }
 
+    await location.getLocation().then((currentLocation) {
+      userLocation = currentLocation;
+      latitude = currentLocation.latitude ?? 0;
+      longitude = currentLocation.longitude ?? 0;
+    });
+
+    await getAddress(userLocation!.latitude, userLocation!.longitude);
+
     stream = location.onLocationChanged.listen((LocationData currentLocation) async {
       latitude = currentLocation.latitude!;
       longitude = currentLocation.longitude!;

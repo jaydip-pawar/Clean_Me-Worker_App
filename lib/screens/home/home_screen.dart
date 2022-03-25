@@ -28,14 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           Positioned.fill(
-            bottom: height(context) * 0.28,
+            bottom: height(context) * 0.37,
             child: const MyGoogleMap(),
           ),
           Positioned.fill(
             child: DraggableScrollableSheet(
-              maxChildSize: 0.8,
-              minChildSize: 0.345,
-              initialChildSize: 0.37,
+              maxChildSize: 0.9,
+              minChildSize: 0.415,
+              initialChildSize: 0.43,
               builder: (ctx, controller) {
                 return Material(
                   elevation: 10,
